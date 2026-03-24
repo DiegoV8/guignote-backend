@@ -1,0 +1,26 @@
+FROM python:3.13-alpine
+
+# Directorio de trabajo
+WORKDIR /sotacaballorey
+
+# Bash
+RUN apk add --no-cache bash
+
+# Copiar requirements.txt
+COPY requirements.txt .
+
+# Instalar dependencias o librerías indicadas en
+# requirements.txt (Django, servidor...)
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Establece zona horaria si lo necesitas
+RUN cp /usr/share/zoneinfo/Europe/Madrid /etc/localtime && echo "Europe/Madrid" > /etc/timezone
+
+# Copiar código fuente
+COPY ./sotacaballorey .
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
+
+# Puerto
+EXPOSE 8000
+CMD ["./entrypoint.sh"]

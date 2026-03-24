@@ -1,0 +1,29 @@
+[
+    {
+        "model": "aspecto_carta.cardskin",
+        "pk": 1,
+        "fields": {
+            "id": 1,
+            "name": "Default",
+            "file_path": "/static/images/cards/default.png"
+        }
+    },
+    {
+        "model": "aspecto_carta.cardskin",
+        "pk": 2,
+        "fields": {
+            "id": 2,
+            "name": "Poker",
+            "file_path": "/static/images/cards/poker.png"
+        }
+    },
+    {
+        "model": "aspecto_carta.cardskin",
+        "pk": 3,
+        "fields": {
+            "id": 3,
+            "name": "Paint",
+            "file_path": "/static/images/cards/paint.png"
+        }
+    }
+]
